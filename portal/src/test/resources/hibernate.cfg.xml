@@ -1,0 +1,25 @@
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="show_sql">false</property>
+
+        <mapping class="database.audio.Audio"/>
+        <mapping class="database.dto.User"/>
+        <mapping class="database.project.Project"/>
+        <mapping class="database.note.Note"/>
+        <mapping class="database.todo.ToDoList"/>
+        <mapping class="database.discussion.Discussion"/>
+        <mapping class="database.file.UploadedFile"/>
+        <mapping class="database.message.Message"/>
+        <mapping class="database.message.UnreadMessage"/>
+        <mapping class="database.deadline.Deadline"/>
+        <mapping class="database.invite.Invite"/>
+        <mapping class="database.task.ToDoTask"/>
+        <mapping class="database.audioComment.AudioComment"/>
+        <mapping class="database.watermark.Watermark"/>
+        <mapping class="database.logger.ProjectEvent"/>
+    </session-factory>
+</hibernate-configuration>

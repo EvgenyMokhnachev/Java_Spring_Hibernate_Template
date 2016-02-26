@@ -1,0 +1,464 @@
+#* @vtlvariable name="samples" type="java.lang.String" *#
+#* @vtlvariable name="pageTitle" type="java.lang.String" *#
+<!DOCTYPE html>
+<html>
+<head>
+    <title>$pageTitle</title>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+
+    <link href="/css/fonts.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="/lib/css/normalize/normalize.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/modalWindow.css" rel="stylesheet" type="text/css"/>
+
+    <script src="/lib/jquery/jquery.min.js" type="text/javascript"></script>
+    <script src="/javascript/Ajax.js" type="text/javascript"></script>
+    <script src="/javascript/ModalWindow.js" type="text/javascript"></script>
+    <script src="/javascript/Validator.js" type="text/javascript"></script>
+    <script src="/javascript/PopupAlert.js" type="text/javascript"></script>
+    <script src="/javascript/pages/welcomePage.js" type="text/javascript"></script>
+</head>
+<body>
+
+<div class="hreHeaderBlock">
+    <div class="fillBlock">
+        <div class="centerContentBlock">
+            <div class="header">
+                <div class="logoBlock">
+                    <div class="logo"></div>
+                    <div class="title">AUDIO TASK MANAGER</div>
+                </div>
+                <div class="btnsBlock">
+                    <button class="logInBtn openLoginModal">LOG IN</button>
+                    <button class="signInBtn openRegisterModal">SIGN IN</button>
+                </div>
+            </div>
+            <div class="companyDescriptionBlock">
+                <div class="topDescription">Project management tool designed<br>specifically for audio professionals</div>
+                <div class="bottomDescription">We make collaboration with clients seamless<br>and receiving instantaneous, actionable feedback effortless</div>
+                <button class="signInBtn openRegisterModal">SIGN IN</button>
+            </div>
+##            <div class="marginBlock"></div>
+        </div>
+    </div>
+</div>
+
+<div class="headerBlock" style="width: 100%; top: 0; z-index: 2; display: none">
+    <div class="centerContentBlock">
+        <div class="logoBlock">
+            <div class="logo"></div>
+            <div class="title">AUDIO TASK MANAGER</div>
+        </div>
+        <div class="btnsBlock">
+            <button class="featuresBtn">FEATURES</button>
+            <button class="pricingBtn">PRICING</button>
+            <button class="logInBtn openLoginModal">LOG IN</button>
+            <button class="signInBtn openRegisterModal">SIGN IN</button>
+        </div>
+    </div>
+</div>
+
+<div class="differentInfoBlock">
+    <div class="centerContentBlock">
+        <div class="differentImages">
+            <img>
+        </div>
+        <div class="differentText">
+            <span class="differentTitle">The single platform for every customer interaction</span>
+            <ul class="differentItems">
+                <li data-imageSrc="/css/img/differentImages/browserPic.png">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <span class="itemTitle">SEE YOUR CUSTOMERS</span>
+                        <br/>
+                        <span class="itemDescription">With the Observe package. Learn more</span>
+                    </div>
+                </li>
+                <li data-imageSrc="/css/img/differentImages/browserPic.png">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <span class="itemTitle">SEE YOUR CUSTOMERS</span>
+                        <br/>
+                        <span class="itemDescription">With the Observe package. Learn more</span>
+                    </div>
+                </li>
+                <li data-imageSrc="/css/img/differentImages/browserPic.png">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <span class="itemTitle">SEE YOUR CUSTOMERS</span>
+                        <br/>
+                        <span class="itemDescription">With the Observe package. Learn more</span>
+                    </div>
+                </li>
+                <li data-imageSrc="/css/img/differentImages/browserPic.png">
+                    <div class="arrow"></div>
+                    <div class="content">
+                        <span class="itemTitle">SEE YOUR CUSTOMERS</span>
+                        <br/>
+                        <span class="itemDescription">With the Observe package. Learn more</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="reviewsBlock">
+    <div class="centerContentBlock">
+        <div class="reviewItemBlock">
+            <div class="avatar"><img src="/css/img/commentAvatarpng.png"></div>
+            <div class="text">
+                <div class="title">
+                    <span class="groupTitle">AC-DC</span>
+                    <span class="groupDescription">Australian lable</span>
+                </div>
+                <div class="reviewText">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
+                    ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis
+                    parturient montes, nascetur ridiculus mus.
+                </div>
+            </div>
+            <div class="btns">
+                <button class="joinUsBtn">JOIN US</button>
+            </div>
+        </div>
+        <div class="sliderControlBlock">
+            <span class="controlItem active"></span>
+            <span class="controlItem"></span>
+            <span class="controlItem"></span>
+        </div>
+    </div>
+</div>
+
+<div class="futuresBlock">
+    <div class="centerContentBlock">
+        <div class="blockTitle">Key Futures</div>
+        <div class="blockLogo"><img src="/css/img/futuresBlockLogo.png"/></div>
+        <div class="futuresItems">
+            <div class="item">
+                <div class="itemPicBlock">
+                    <img src="/css/img/futuresBlockPics/chatPic.png"/>
+                </div>
+                <div class="itemTextBlock">
+                    <div class="title">Bring Your clients on board</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum
+                        sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="itemPicBlock">
+                    <img src="/css/img/futuresBlockPics/smilePic.png"/>
+                </div>
+                <div class="itemTextBlock">
+                    <div class="title">take the pain out of billing with</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum
+                        sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="itemPicBlock">
+                    <img src="/css/img/futuresBlockPics/progressClockPic.png"/>
+                </div>
+                <div class="itemTextBlock">
+                    <div class="title">manage your project from start</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum
+                        sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="itemPicBlock">
+                    <img src="/css/img/futuresBlockPics/AcceptDocumentPic.png"/>
+                </div>
+                <div class="itemTextBlock">
+                    <div class="title">keep all of your files in one place</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum
+                        sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="itemPicBlock">
+                    <img src="/css/img/futuresBlockPics/EyePic.png"/>
+                </div>
+                <div class="itemTextBlock">
+                    <div class="title">keep your project on shedule</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum
+                        sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <div class="itemPicBlock">
+                    <img src="/css/img/futuresBlockPics/sharePick.png"/>
+                </div>
+                <div class="itemTextBlock">
+                    <div class="title">share your files when you want to</div>
+                    <div class="text">
+                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Aenean commodo ligula eget dolor. Aenean massa. Cum
+                        sociis natoque penatibus et magnis dis parturient montes,
+                        nascetur ridiculus mus.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="oldNewWayBlock">
+    <div class="centerContentBlock">
+        <div class="blockTitle">Audiomgr is an all inclusive platform that includes everything you need to
+            organize, classify, search, store, and share all types of digital media
+            securely and in the cloud
+        </div>
+        <div class="waysBlock">
+            <div class="oldWay">
+                <div class="title"><span style="letter-spacing: 2px">OLD</span> WAY</div>
+                <img src="/css/img/oldNewWay/oldWayPic.png"/>
+            </div>
+            <div class="vsBlock">
+                <span class="vsItem">VS</span>
+            </div>
+            <div class="newWay">
+                <div class="title"><span style="letter-spacing: 2px">NEW</span> WAY</div>
+                <img src="/css/img/oldNewWay/newWayPic.png"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="preFooterBlock">
+    <div class="fillBlock">
+        <div class="centerContentBlock">
+            <div class="title">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+            </div>
+            <button class="joinUs">JOIN US</button>
+        </div>
+    </div>
+</div>
+
+<div class="footerBlock">
+    <div class="centerContentBlock">
+        <div class="footerItems">
+            <div class="companyLogo"><img src="/css/img/companyLogoGray.png"/></div>
+            <div class="buttons">
+                <button>About Us</button>
+                <button>Blog</button>
+                <button>Private Policy</button>
+                <button>Tesrms</button>
+                <button>Contact Us</button>
+            </div>
+            <div class="socialItems">
+                <img src="/css/img/facebookPic.png"/>
+                <img src="/css/img/tweeterPic.png"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modalWindow loginModal">
+    <div class="content">
+        <button class="closeModalBtn"></button>
+
+        <div class="modalRow">
+            <div class="title">Login Your ATM Account</div>
+        </div>
+
+        <form action="" onsubmit="return false">
+            <div class="modalRow">
+                <input type="email" class="email notEmpty" placeholder="Email"/>
+                <div class="errorMessage" data-text="Email address not correct"></div>
+            </div>
+
+            <div class="modalRow">
+                <input type="password" class="password notEmpty" placeholder="Password"/>
+                <div class="errorMessage" data-text="Password not correct"></div>
+            </div>
+
+            <button class="actionBtn logInBtn">LOG IN</button>
+        </form>
+
+        <div class="modalFooter">
+            <div class="forgotPassword">Forgot Password?</div>
+            <div class="getStarted">Don't have an account? Get Started</div>
+        </div>
+    </div>
+</div>
+
+<div class="modalWindow registerModal">
+    <div class="content">
+        <button class="closeModalBtn"></button>
+
+        <div class="modalRow">
+            <div class="title">Get Started Absolutely <span style="color: #0089fe; font-weight: bold">FREE</span></div>
+            <div class="modalDescription">No credit card needed.</div>
+        </div>
+
+        <form action="" onsubmit="return false">
+            <div class="modalRow">
+                <input type="text" class="username notEmpty ajax" data-href="user/checkUsernameAvailable" data-key="username" placeholder="Your Name"/>
+                <div class="errorMessage" data-text="Username not correct"></div>
+            </div>
+
+            <div class="modalRow">
+                <input type="email" class="email notEmpty ajax" data-href="user/checkEmailAvailable" data-key="email" placeholder="Your Email Address"/>
+                <div class="errorMessage" data-text="Email address not correct"></div>
+            </div>
+
+            <div class="modalRow">
+                <input type="password" class="password notEmpty" placeholder="Create a Password"/>
+                <div class="errorMessage" data-text="Password not correct"></div>
+            </div>
+
+            <div class="modalRow">
+                <button class="actionBtn signUpBtn">SIGN UP FREE</button>
+            </div>
+        </form>
+
+        <div class="modalRow">
+            <div class="modalDescription">By clicking “Sign Up Free” I agree to AudioTaskManager’s <button class="termsOfServiceBtn">Terms of Service</button></div>
+        </div>
+
+        <div class="modalFooter">
+            <div class="alreadyAccountText">Already have an account? Login!</div>
+        </div>
+    </div>
+</div>
+
+<div class="modalWindow resetPasswordModal">
+    <div class="content">
+        <button class="closeModalBtn"></button>
+
+        <div class="modalRow">
+            <div class="title">Password recovery</div>
+            <div class="modalDescription">Forgot your password? Enter your email, we will send you instructions</div>
+        </div>
+
+        <form action="" onsubmit="return false">
+            <div class="modalRow">
+                <input id="resetPasswordEmailInput" type="email" class="email notEmpty" placeholder="Enter Your Email Address"/>
+                <div class="errorMessage" data-text="Email address not correct">Email address not correct</div>
+            </div>
+
+            <div class="modalRow">
+                <button class="actionBtn sendBtn">SEND INSTRUCTIONS</button>
+                <div class="modalDescription"></div>
+            </div>
+        </form>
+
+        <div class="modalFooter">
+            <div class="alreadyAccountText"></div>
+        </div>
+    </div>
+</div>
+
+<div class="modalWindow resetPasswordCompleteModal">
+    <div class="content">
+        <button class="closeModalBtn"></button>
+
+        <div class="modalRow">
+            <div class="title">Reset password</div>
+##            <div class="modalDescription">Forgot your password? Enter your email, we will send you instructions</div>
+        </div>
+
+        <form action="" onsubmit="return false">
+            <div class="modalRow">
+                <input class="password notNull" type="password" placeholder="Enter new password"/>
+                <div class="errorMessage" data-text="Password in not correct">Password in not correct</div>
+            </div>
+
+            <div class="modalRow">
+                <input class="rePassword notNull" type="password" placeholder="Repeat new password"/>
+                <div class="errorMessage" data-text="Password in not correct">Password in not correct</div>
+            </div>
+
+            <div class="modalRow">
+                <button class="actionBtn sendBtn">CHANGE PASSWORD</button>
+                <div class="modalDescription"></div>
+            </div>
+        </form>
+
+##        <div class="modalFooter">
+##            <div class="alreadyAccountText"></div>
+##        </div>
+    </div>
+</div>
+
+<div class="modalWindow termsOfServiceModal">
+    <div class="content">
+        <button class="closeModalBtn"></button>
+
+        <div class="modalRow">
+            <div class="title">Terms of Service</div>
+        </div>
+
+        <div class="modalRow">
+            <div class="contentText">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent in elit at
+                nisi cursus iaculis. Morbi molestie pellentesque massa eu lacinia.
+                Maecenas a nunc arcu. Sed venenatis elementum ultricies.
+            </div>
+        </div>
+
+        <div class="modalRow">
+            <button class="actionBtn goBack">GO BACK</button>
+        </div>
+
+        <div class="modalFooter">
+            <div class="alreadyAccountText"></div>
+        </div>
+    </div>
+</div>
+
+<div id="popupAlertBlock" style="position: fixed; right: 10px; bottom: 0; z-index: 999"></div>
+
+</body>
+</html>

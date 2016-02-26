@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+    <mvc:annotation-driven />
+    <context:annotation-config />
+    <context:component-scan base-package="controllers"/>
+    <context:component-scan base-package="database"/>
+    <tx:annotation-driven transaction-manager="transactionManager" />
+
+    <mvc:view-controller path="/user/loginPage" view-name="loginPage"/>
+    <mvc:view-controller path="/user/passRecoveryPage" view-name="passRecoveryPage"/>
+    <mvc:view-controller path="/user/registerPage" view-name="registerPage"/>
+
+    <mvc:view-controller path="/project/createPage" view-name="createProject"/>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/img/**"/>
+            <mvc:exclude-mapping path="/css/**"/>
+            <mvc:exclude-mapping path="/js/**"/>
+            <mvc:exclude-mapping path="/upload/**"/>
+            <mvc:exclude-mapping path="/favicon.ico"/>
+            <bean class="controllers.BaseCtrl"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <bean id="propertyConfigurer"
+          class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer"
+          p:location="classpath:db.properties" />
+
+    <bean id="velocityConfig" class="org.springframework.web.servlet.view.velocity.VelocityConfigurer">
+        <property name="resourceLoaderPath" value="WEB-INF/views/"/>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.velocity.VelocityViewResolver">
+        <property name="contentType" value="text/html; charset=UTF-8"/>
+        <property name="suffix" value=".vm"/>
+    </bean>
+
+    <bean id="audioService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.AudioService"/>
+    </bean>
+
+    <bean id="userService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.UserService"/>
+    </bean>
+
+    <bean id="projectService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.ProjectService"/>
+    </bean>
+
+    <bean id="noteService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.NoteService"/>
+    </bean>
+
+    <bean id="todoListService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.ToDoListService"/>
+    </bean>
+
+    <bean id="todoTaskService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.ToDoTaskService"/>
+    </bean>
+
+    <bean id="uploadedFileService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.UploadedFileService"/>
+    </bean>
+
+    <bean id="discussionService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.DiscussionService"/>
+    </bean>
+
+    <bean id="watermarkService" class="org.mockito.Mockito" factory-method="mock">
+        <constructor-arg value="services.WatermarkService"/>
+    </bean>
+
+    <bean id="multipartResolver"
+          class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+
+        <property name="maxUploadSize" value="100000"/>
+    </bean>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClassName}" />
+        <property name="jdbcUrl" value="${jdbc.databaseurl}" />
+        <property name="user" value="${jdbc.username}" />
+        <property name="password" value="${jdbc.password}" />
+
+        <property name="minPoolSize" value="${c3p0.minPoolSize}" />
+        <property name="maxPoolSize" value="${c3p0.maxPoolSize}" />
+        <property name="acquireIncrement" value="${c3p0.acquireIncrement}" />
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="configLocation">
+            <value>classpath:hibernate.cfg.xml</value>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">${jdbc.dialect}</prop>
+            </props>
+        </property>
+    </bean>
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+</beans>
